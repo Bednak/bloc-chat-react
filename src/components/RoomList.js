@@ -17,6 +17,11 @@ class RoomList extends Component {
     });
   }
 
+  createRoom(newRoomName) {
+
+    this.roomsRef.push({name: newRoomName});
+  }
+
    render() {
      return(
 
@@ -27,6 +32,14 @@ class RoomList extends Component {
           <li key={room.key} align="left"> {room.name} </li> )
         }
        </ul>
+
+       <div>
+        <form>
+          <input type="text" id="room" placeholder="New Room Name"></input>
+          <button type="button" onClick={() => this.createRoom(document.getElementById('room').value)}>Add Room</button>
+        </form>
+
+       </div>
       </aside>
 
      )
