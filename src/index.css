@@ -12,3 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.RoomList {
+  background: Gainsboro;
+  width: 15%;
+  float: left;
+  border: solid rgb(0,0,0);
+  padding: 20px;
+  text-align: center;
+  min-height: 750px;
+
+}
