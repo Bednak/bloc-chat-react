@@ -23,3 +23,13 @@ code {
   min-height: 750px;
 
 }
+
+.MessageList {
+  background: white;
+  float: center;
+  border: solid rgb(0,0,0);
+  padding: 20px;
+  text-align: center;
+  min-height: 750px;
+
+}
