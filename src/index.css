@@ -33,3 +33,23 @@ code {
   min-height: 750px;
 
 }
+
+.App {
+  background: Gainsboro;
+}
+
+.message {
+  background: Gainsboro;
+  text-align: left;
+  float: left;
+  padding: 10px;
+  border: inset;
+  width: 82%;
+}
+
+.currentRoom {
+  padding: 20px;
+  float: center;
+  padding: 20px;
+  text-align: center;
+}

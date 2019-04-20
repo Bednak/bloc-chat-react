@@ -15,12 +15,24 @@ var config = {
   firebase.initializeApp(config);
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentRoom: ''};
+
+  }
+
+  setCurrentRoom(room) {
+
+  this.setState({currentRoom: room})
+
+  }
+
   render() {
     return (
       <div className="App">
 
-        <RoomList firebase={firebase}/>
-        <MessageList firebase={firebase}/>
+        <RoomList firebase={firebase} currentRoom={this.state.currentRoom} setCurrentRoom={this.setCurrentRoom.bind(this)}/>
+        <MessageList firebase={firebase} currentRoom={this.state.currentRoom}/>
 
       </div>
 
