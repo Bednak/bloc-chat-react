@@ -38,7 +38,7 @@ class RoomList extends Component {
        <h1>Bloc Chat</h1>
         <ul>
          {this.state.rooms.map( (room, index) =>
-           <li align="left"><button key={room.key} onClick={ () => this.props.setCurrentRoom(room)}> {room.name} </button></li> )
+           <li align="left" key={room.key}><button onClick={ () => this.props.setCurrentRoom(room)}> {room.name} </button></li> )
          }
         </ul>
 

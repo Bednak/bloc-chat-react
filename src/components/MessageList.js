@@ -29,10 +29,10 @@ class MessageList extends Component {
 
   displayMessages(message, index) {
 
-    if(message.roomId == this.props.currentRoom.key)
+    if(message.roomId === this.props.currentRoom.key)
     {
 			return (
-				<section className='message'>
+				<section className='message' key={message.key}>
 					<p>User: {message.username}</p>
 					<p>Sent At: {message.sentAt}</p>
 					<p>Message: {message.content}</p>
