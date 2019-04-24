@@ -53,3 +53,14 @@ code {
   padding: 20px;
   text-align: center;
 }
+
+.userButton {
+  background: Gainsboro;
+  display: inline-block;
+  width: 15%;
+  float: left;
+  border: solid rgb(0,0,0);
+  padding: 20px;
+  text-align: center;
+
+  }
