@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh
 }
 
 code {
@@ -20,7 +21,7 @@ code {
   border: solid rgb(0,0,0);
   padding: 20px;
   text-align: center;
-  min-height: 750px;
+  min-height: 875px;
 
 }
 
@@ -30,12 +31,13 @@ code {
   border: solid rgb(0,0,0);
   padding: 20px;
   text-align: center;
-  min-height: 750px;
+  min-height: 875px;
 
 }
 
 .App {
   background: Gainsboro;
+  min-height: 100vh
 }
 
 .message {
@@ -64,3 +66,16 @@ code {
   text-align: center;
 
   }
+
+#submit {
+ color: #Gainsboro;
+ width: 135px;
+ height: 60px;
+ float: right;
+ margin: 0;
+ padding: 0;
+}
+
+#textarea{
+  resize: none;
+}

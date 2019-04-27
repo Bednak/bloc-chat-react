@@ -22,8 +22,16 @@ class RoomList extends Component {
   createRoom(e) {
 
       e.preventDefault();
-      this.roomsRef.push({name: this.state.newRoom});
-      this.setState({ newRoom: ' ' });
+
+      if(this.props.currentUser !== "Guest") {
+          this.roomsRef.push({name: this.state.newRoom});
+          this.setState({ newRoom: ' ' });
+      }
+
+      else {
+        alert("Please sign in to create a room");
+        this.setState({ newRoom: ' ' });
+      }
 
   }
 

@@ -47,9 +47,9 @@ class App extends Component {
 
       <div className="App">
 
-        <RoomList firebase={firebase} currentRoom={this.state.currentRoom} setCurrentRoom={this.setCurrentRoom.bind(this)}/>
+        <RoomList firebase={firebase} currentRoom={this.state.currentRoom} currentUser={this.state.user} setCurrentRoom={this.setCurrentRoom.bind(this)}/>
         <User firebase={firebase} currentUser={this.state.user} setUser={(e) => this.setUser(e)}/>
-        <MessageList firebase={firebase} currentRoom={this.state.currentRoom}/>
+        <MessageList firebase={firebase} currentRoom={this.state.currentRoom} currentUser={this.state.user}/>
 
       </div>
 

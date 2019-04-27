@@ -4,18 +4,14 @@ class MessageList extends Component {
    constructor(props) {
      super(props);
      this.state = {
-
        messages: [],
-       username: "",
-       content: "",
-       sentAt: "",
-       roomId: ""
-
+       username: '',
+       message: '',
      };
 
      this.messagesRef = this.props.firebase.database().ref('messages');
-   }
 
+   }
 
    componentDidMount() {
      this.messagesRef.on('child_added', snapshot => {
@@ -25,7 +21,6 @@ class MessageList extends Component {
 
     });
   }
-
 
   displayMessages(message, index) {
 
@@ -41,12 +36,45 @@ class MessageList extends Component {
      }
    }
 
+   sendMessage(e) {
+
+     e.preventDefault();
+
+     if(this.props.currentUser !== "Guest"){
+
+       this.messagesRef.push({
+         username: this.props.currentUser,
+         content: this.state.message,
+         roomId: this.props.currentRoom.key,
+         sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
+       });
+
+       this.setState({message: ' ' });
+     }
+
+     else{
+       alert("Please sign in to send messages");
+       this.setState({message: ' ' });
+     }
+   }
+
+   handleChange(e) {
+       this.setState({message: e.target.value })
+     }
+
+
    render() {
      return(
 
       <div className="MessageList">
         <h1 className="currentRoom"> Current Room: {this.props.currentRoom.name} </h1>
         {this.state.messages.map((message, index) => this.displayMessages(message, index))}
+
+        <form className='message'>
+          <textarea rows="4" id="textarea" cols="195" placeholder="Write your message here" value={this.state.message} onChange={(e) => this.handleChange(e)}/>
+          <input type="submit" id="submit" value="Send Message" onClick= {(e) => this.sendMessage(e)} />
+        </form>
+
       </div>
      );
   }
