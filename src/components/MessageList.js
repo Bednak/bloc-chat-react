@@ -68,7 +68,10 @@ class MessageList extends Component {
 
       <div className="MessageList">
         <h1 className="currentRoom"> Current Room: {this.props.currentRoom.name} </h1>
-        {this.state.messages.map((message, index) => this.displayMessages(message, index))}
+
+        <ul id="list">
+          <li>{this.state.messages.map((message, index) => this.displayMessages(message, index))}</li>
+        </ul>
 
         <form className='message'>
           <textarea rows="4" id="textarea" cols="195" placeholder="Write your message here" value={this.state.message} onChange={(e) => this.handleChange(e)}/>
