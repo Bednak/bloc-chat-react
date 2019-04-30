@@ -83,3 +83,9 @@ code {
 #list {
 list-style-type: none;
 }
+
+#delete {
+  float: right;
+  right: 50px;
+  display: inline-block;
+}

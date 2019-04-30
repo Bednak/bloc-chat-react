@@ -22,6 +22,7 @@ class MessageList extends Component {
     });
   }
 
+
   displayMessages(message, index) {
 
     if(message.roomId === this.props.currentRoom.key)
@@ -31,7 +32,7 @@ class MessageList extends Component {
 					<p>User: {message.username}</p>
 					<p>Sent At: {message.sentAt}</p>
 					<p>Message: {message.content}</p>
-				</section>
+        </section>
        )
      }
    }
@@ -68,7 +69,7 @@ class MessageList extends Component {
 
       <div className="MessageList">
         <h1 className="currentRoom"> Current Room: {this.props.currentRoom.name} </h1>
-
+        
         <ul id="list">
           <li>{this.state.messages.map((message, index) => this.displayMessages(message, index))}</li>
         </ul>
